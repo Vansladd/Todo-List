@@ -1,39 +1,42 @@
-import "./Home.css"
-import restaurantImage from "./restaurant.jpg"
-import menu from "./Menu"
-import about from "./About"
+class todo_item{
+    constructor(title,description,dueDate,priority,id,completed){
+        this._title = title;
+        this._description = description;
+        this._dueDate = dueDate;
+        this._priority = priority;
+        this.id = id
+        this._completed = completed;
+    }
 
+    set priority(newPriority){
+        this._priority = newPriority;
+    }
 
-const homeBtn = document.querySelector("#Home");
-const menuBtn = document.querySelector("#Menu");
-const aboutBtn = document.querySelector("#About");
-const contentDiv = document.querySelector("#content");
+    set title(newTitle){
+        this._title = newTitle;
+    }
 
-const image = document.createElement("img");
+    set completed(newStatus){
+        this._completed = newStatus;
+    }
+}
 
-image.src = restaurantImage;
+class projects{
+    constructor(title){
+        this.title = title;
 
-const header = document.createElement("h1");
-
-header.innerText = "Vansladd's Restaurant";
-
-contentDiv.appendChild(header)
-contentDiv.appendChild(image)
-
-menuBtn.addEventListener("click",() =>{
-    contentDiv.innerHTML="";
-    menu(contentDiv);
-})
-
-homeBtn.addEventListener("click",() => {
-    contentDiv.innerHTML = "";
-    contentDiv.appendChild(header)
-    contentDiv.appendChild(image)
-})
-
-aboutBtn.addEventListener("click", () => {
-    contentDiv.innerHTML = "";
-    about(contentDiv);
-})
-
-
+    }
+    todos = []
+    createTodo = (title,description,dueDate,priority) => {
+        id = todos.length
+        completed = false;
+        item = new todo_item(title,description,dueDate,priority,id,completed);
+        this.todos.append(item);
+    }
+    DeleteTodo = (id) => {
+        index = this.todos.indexOf(id);
+        if(index > -1){
+            this.todos.splice(index,1)
+        }
+    }
+}
