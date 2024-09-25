@@ -1,0 +1,32 @@
+nav{
+    display: flex;
+    gap: 10px;
+    justify-content: end;
+}
+nav button{
+    background: white;
+    border: #ffcc66;
+    border-radius: 5px;
+    width: 10%;
+    height: auto;
+
+}
+body{
+    background: linear-gradient(to bottom right, #ffffcc 0%, #ffcc66 100%);
+    width: 90vw;
+    height: 100vh;
+}
+#content{
+    width: 100vw;
+    position: relative;
+}
+
+#content img{
+    width: 20%;
+    height: auto;
+}
+
+pre{
+    display: flex;
+    flex-direction: column;
+}
